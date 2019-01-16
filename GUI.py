@@ -9,12 +9,12 @@ class RemoteStart:
         self.startUp = Button(frame, text = "Wake Up Server", command = self.turnOnServer)
         self.startUp.pack(side = LEFT)
         
-        self.close = = Button(frame, text = "Closing Prompt", command = frame.quit)
+        self.close = Button(frame, text = "Closing Prompt", command = frame.quit)
         self.close.pack(side = LEFT)
         
     def turnOnServer(self):
         print("Turning On Server")
-        send_magic_packet('ff.ff.ff.ff.ff.ff')
+        send_magic_packet('xx.xx.xx.xx.xx.xx')
         
 root = Tk()
 b = RemoteStart(root)
