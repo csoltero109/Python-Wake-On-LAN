@@ -7,17 +7,19 @@ class RemoteStart:
         frame.pack()
         w, h = root.winfo_screenwidth(), root.winfo_screenheight()
         frame.place(x=0, y=0, anchor="nw", width=w, height=h)
-        frame.configure(bg = "blue")
+        frame.configure(bg = "black")
         
-        self.startUp = Button(frame, text = "Wake Up Server", command = self.turnOnServer)
-        self.startUp.place(x=w*(1/4), y=h*(1/4))
+        self.startUp = Button(frame, text = "Wake Up Server", command = self.turnOnServer, bg="gray")
+        self.startUp.config(font=("Courier",44))
+        self.startUp.pack(side=TOP,fill=BOTH, expand=True, padx=50, pady=50)
 
-        self.startGameUp = Button(frame, text = "Wake Up Main Rig", command = self.turnOnGamingRig)
-        self.startGameUp.place(x=w*(1/4), y=h*(3/4))
+        self.startGameUp = Button(frame, text = "Wake Up Main Rig", command = self.turnOnGamingRig, bg="gray")
+        self.startGameUp.config(font=("Courier",44))
+        self.startGameUp.pack(fill=BOTH, expand=True, padx=50, pady=50)
 
-        self.close = Button(frame, text = "Exit", command = exit)
-        self.close.place(x=w*(3/4), y=h*(2/4))
-
+        self.close = Button(frame, text = "Exit", command = exit, bg="gray")
+        self.close.config(font=("Courier",44))
+        self.close.pack(side=BOTTOM, fill=BOTH, expand=True, padx=50, pady=50)
 
     def turnOnServer(self):
         print("Turning On Server")
@@ -34,7 +36,6 @@ root = Tk()
 w, h = root.winfo_screenwidth(), root.winfo_screenheight()
 root.overrideredirect(1)
 root.geometry("%dx%d+0+0" % (w, h))
-root.title("Wake-On-LAN")
 root.configure(bg ="#002259")
 b = RemoteStart(root)
 root.mainloop()
