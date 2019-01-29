@@ -10,16 +10,16 @@ class RemoteStart:
         frame.configure(bg = "black")
         
         self.startUp = Button(frame, text = "Wake Up Server", command = self.turnOnServer, bg="gray")
-        self.startUp.config(font=("Courier",44))
-        self.startUp.pack(side=TOP,fill=BOTH, expand=True, padx=50, pady=50)
+        self.startUp.config(font=("Courier"))
+        self.startUp.pack(side=TOP,fill=BOTH, expand=True, padx=10, pady=10)
 
         self.startGameUp = Button(frame, text = "Wake Up Main Rig", command = self.turnOnGamingRig, bg="gray")
-        self.startGameUp.config(font=("Courier",44))
-        self.startGameUp.pack(fill=BOTH, expand=True, padx=50, pady=50)
+        self.startGameUp.config(font=("Courier"))
+        self.startGameUp.pack(fill=BOTH, expand=True, padx=10, pady=10)
 
         self.close = Button(frame, text = "Exit", command = exit, bg="gray")
-        self.close.config(font=("Courier",44))
-        self.close.pack(side=BOTTOM, fill=BOTH, expand=True, padx=50, pady=50)
+        self.close.config(font=("Courier"))
+        self.close.pack(side=BOTTOM, fill=BOTH, expand=True, padx=10, pady=10)
 
     def turnOnServer(self):
         print("Turning On Server")
